@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { Card } from "./card/card";
+import { Form } from "./form/form";
+import { Table } from "./table/table";
 
 function App() {
+  let [data, setData] = useState<Array<{ [key: string]: any }>>([]);
+
+  const setDataFunc = (dataRow: { [key: string]: any }) => {
+    setData([...data, dataRow]);
+    console.log(dataRow);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Submit a tree</h1>
+      <Card padding={true}>
+        <Form setData={setDataFunc}></Form>
+      </Card>
+      <Card>
+        <Table data={data}></Table>
+      </Card>
     </div>
   );
 }

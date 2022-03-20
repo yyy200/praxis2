@@ -1,0 +1,9 @@
+.card {
+  margin: auto;
+  width: 60%;
+
+  overflow: hidden;
+
+  border-radius: 2em;
+  border: gainsboro 2px solid;
+}
