@@ -64,7 +64,7 @@ export const Form: React.FC<Props> = ({ setData }) => {
 
   return (
     <form onSubmit={submit}>
-      <h2>Submit a tree</h2>
+      <h2>Enter tree data</h2>
       <div className="input-group">
         <label htmlFor="Species">Species</label>
         <input
